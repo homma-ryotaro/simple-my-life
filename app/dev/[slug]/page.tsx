@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-export default async function Post({ params }: any) {
+export default async function DevPost({ params }: any) {
   const { slug } = params;
   const post: any = await getPost(slug);
   if (!post || post?.draft) notFound();

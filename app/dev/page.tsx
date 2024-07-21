@@ -4,9 +4,9 @@ import PageContainer from "@/components/page-container";
 import { getMetadata } from "@/lib/utils";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = getMetadata("blog");
+export const metadata: Metadata = getMetadata("dev");
 
-const Blog = () => {
+const Dev = () => {
   return (
     <PageContainer>
       <BlogContent posts={getDevPostsData()} />
@@ -14,4 +14,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Dev;
