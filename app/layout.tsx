@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import ProviderTheme from "@/provider/provider-theme";
 import type { Metadata } from "next";
 import { Noto_Serif_JP } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 
 const notoSerifJp = Noto_Serif_JP({
@@ -41,7 +42,9 @@ export default function RootLayout({
                 "md:mb-12 mb-8 min-w-full prose md:prose-lg dark:prose-invert"
               }
             >
-              <Title />
+              <Suspense>
+                <Title />
+              </Suspense>
               {children}
             </main>
           </div>
