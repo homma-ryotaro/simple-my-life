@@ -1,4 +1,4 @@
-import { getPostsData } from "@/app/server-utils";
+import { getDevPostsData } from "@/app/server-utils";
 import SideNav from "@/components/side-nav";
 import Time from "@/components/time";
 import Toc from "@/components/toc";
@@ -16,8 +16,7 @@ import remarkGfm from "remark-gfm";
 import remarkNormalizeHeadings from "remark-normalize-headings";
 
 const getPost = async (slug: string) => {
-  const post: any = getPostsData().find((post) => post.id === slug);
-  // 获取目录数据
+  const post: any = getDevPostsData().find((post) => post.id === slug);
   const file = await remark()
     .use(remarkNormalizeHeadings)
     .use(remarkFlexibleToc)
@@ -30,7 +29,7 @@ const getPost = async (slug: string) => {
 };
 
 export async function generateStaticParams() {
-  return getPostsData().map((post) => ({
+  return getDevPostsData().map((post) => ({
     slug: post.id,
   }));
 }

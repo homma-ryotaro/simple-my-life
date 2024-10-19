@@ -85,7 +85,7 @@ const BlogContent = ({ posts }: any) => {
                 {post.summary}
               </CardDescription>
               <div className={"flex justify-end"}>
-                <Link href={`/blog/${post.id}`}>
+                <Link href={`/dev/${post.id}`}>
                   <Button>
                     Read More <ArrowRight size={16} className={"ml-2"} />
                   </Button>
